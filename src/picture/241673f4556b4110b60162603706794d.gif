@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="mobile-agent" content="format=html5; url=http://m.jianshen8.com/qixie/" /><meta name="mobile-agent" content="format=xhtml; url=http://m.jianshen8.com/qixie/" />
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <title>页面没有找到-健身吧</title>
+  <meta name="keywords" content="健身器械使用方法,健身房器械使用图解,器械健身完全指南,健身房器械介绍和使用" />
+  <meta name="description" content="健身吧器械健身频道介绍健身器械使用方法,健身房器械使用图解,器械健身完全指南,健身房器械介绍和使用,健身器材使用方法动图,健身器械正确使用方法,器械健身计划,健身房器械使用和教学等！" />
+  <link rel="stylesheet" href="/templets/jianshen8/css/common.css?v=3">
+  <script src="/templets/jianshen8/js/jquery-2.2.3.min.js"></script>
+  <style>
+    .container {
+      font-family: 微软雅黑， arial， 宋体， sans-serif;
+      margin-bottom: 150px;
+    }
+    .container-top{
+      margin: 80px auto;
+      width: 600px;
+    }
+    .container-top-1 {
+      font-size: 48px;
+      color: #333;
+    }
+    .container-top-2 {
+      font-size: 30px;
+      color: #BBB;
+      margin: 20px 0;
+    }
+    .container-top-3 {
+      font-size: 20px;
+      color: #333;
+      line-height: 40px;
+    }
+    .container-bottom {
+      margin: 180px auto 0;
+      width: 830px;
+    }
+    .container-bottom-1 {
+      color: #fff;
+      background-color: #D52F04;
+      font-size: 26px;
+      width: 120px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+    }
+    .container-bottom-2 li {
+      display: inline-block;
+      width: 240px;
+      height: 200px;
+      margin-right: 30px;
+      margin-top: 20px;
+    }
+    .container-bottom-2 li img {
+      display: block;
+      width: 240px;
+      height: 150px;
+    }
+    .container-bottom-2 li span {
+      display: block;
+      margin-top: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+<!-- 头部 -->
+<div id="header">
+  <div class="head-bar">
+    <div class="commom-width">
+      <div class="fl"><a href="/">首页</a>&nbsp;|&nbsp;<a href="http://m.jianshen8.com">手机版</a>&nbsp;|&nbsp;<a href="http://cy.jianshen8.com/" target="_blank">健身产业网</a>&nbsp;|&nbsp;<a href="/xiazai/" class="xiazai">下载</a></div>
+      <div class="fr">
+        <a href="/fuwu/sw/gzh.html">公众号</a>&nbsp;|&nbsp;        <a href="/fuwu/sw/qqqun.html">QQ群</a>&nbsp;|&nbsp;    <a href="https://www.jianshen8.com" style="color: #d52f04;">返回旧版</a>&nbsp;
+      </div>
+    </div>
+  </div>
+  <!-- 搜索，二维码 -->
+  <div class="header commom-width">
+    <div class="logo"><a href="/"><img src="/templets/jianshen8/images/logo.png" alt="健身吧">
+      <h1>健身吧</h1></a></div>
+    <div class="search">
+      <input type="text" id="search-info">
+      <button class="search-but"><i class="search-icon"></i></button>
+      <ul class="key-word">
+        <li><a href="/jihua/yujia/">瑜伽</a></li>
+        <li><a href="/qixie/">器械</a></li>
+        <li><a href="/xiangmu/youyang/">运动</a></li>
+        <li><a href="/xiangmu/danche/">动感单车</a></li>
+      </ul>
+    </div>
+    <div class="erm">
+      <img src="/templets/jianshen8/images/wx-erw.jpg" alt="健身吧二维码" class="wx-erw">
+      <p class='erm-word'>
+        扫码关注
+        <span>有惊喜!</span>
+      </p>
+      <img src="/templets/jianshen8/images/erw-decorate.jpg" class="erw-decorate">
+    </div>
+  </div>
+  <!-- 导航 -->
+  <div class="nav">
+    <ul class="commom-width">
+      <li class="index-page"><a href="/">首页</a></li>
+      <li><a href="/jirou/" class="jirou">肌肉</a></li>
+      <li><a href="/plan.html" class="jihua">计划</a></li>
+      <li><a href="/qixie/" class="qixie">器械</a></li>
+      <li><a href="/xiangmu/" class="xiangmu">项目</a></li>
+      <li><a href="/yingyang/" class="yinshi">饮食</a></li>
+      <li><a href="/news/" class="zixun">资讯</a></li>
+      <li><a href="/zt/" class="zhuanti">专题</a></li>
+      <li><a href="/kecheng/" class="kecheng" rel="nofollow">课程</a></li>
+      <li><a href="/pinpai/" class="pinpai" rel="nofollow">品牌</a></li>
+      <li><a href="/peixun/" class="peixun" rel="nofollow">培训</a></li>
+      <li><a href="/fuwu/xiaodian.html" target="_blank" class="xiaodian" rel="nofollow">代理招募</a></li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="container-top">
+    <div class="container-top-1">很抱歉!页面无法访问......</div>
+    <div class="container-top-2">温馨提示 :</div>
+    <div class="container-top-3">
+      <div>1.请检查您访问的网址是否正确</div>
+      <div>2.您没有授权访问的文件或目录</div>
+      <div>3.访问的页面可能已删除或页面已失效</div>
+    </div>
+  </div>
+  <div class="container-bottom">
+    <div class="container-bottom-1">热门推荐</div>
+    <div class="container-bottom-2">
+      <ul>
+        <li>
+          <a href="/jirou/xiongbu/7616.html">
+            <img src="/uploads/allimg/140603/4_140603150824_1-lp.jpg" alt="">
+            <span>胸肌内侧怎么练,胸肌内侧锻炼方法</span>
+          </a>
+        </li>
+        <li>
+          <a href="/jirou/xiongbu/7609.html">
+            <img src="/uploads/allimg/140603/4_140603101542_1-lp.jpg" alt="">
+            <span>胸肌内侧锻炼方法,窄距杠铃卧推教程</span>
+          </a>
+        </li>
+        <li>
+          <a href="/qixie/gudingqixie/shimisiji/18366.html">
+            <img src="/uploads/allimg/191108/24_191108134927_1-lp.jpg" alt="">
+            <span>史密斯深蹲和自由深蹲区别是什么</span>
+          </a>
+        </li>
+        <li>
+          <a href="/qixie/ziyouqixie/yaling/18373.html">
+            <img src="/uploads/allimg/191108/24_191108151336_1-lp.jpg" alt="">
+            <span>在家怎么用哑铃练胸肌和腹肌最好</span>
+          </a>
+        </li>
+        <li>
+          <a href="/jihua/jiali/18328.html">
+            <img src="/uploads/allimg/191106/5_191106094009_1-lp.jpg" alt="">
+            <span>男生家里锻炼身体的方法和动作</span>
+          </a>
+        </li>
+        <li>
+          <a href="/jihua/jianfei/18250.html">
+            <img src="/uploads/allimg/191030/5_191030142509_1-lp.jpg" alt="">
+            <span>男生减肥最快的秘籍 睡眠的影响超过你的意</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- 底部 -->
+<div class="footer" id='footer'>
+  <div class="commom-width">
+    <div class="fl">
+      <p class="about-us">
+        <a href="/fuwu/about/abouts.html">网站简介</a>
+        <a href="/fuwu/about/ads.html">商务合作</a>
+        <a href="/fuwu/about/cooperate.html">战略合作</a>
+        <a href="/fuwu/about/contact.html">联系我们</a>
+
+        <script src='/blgg/tj.js' language='javascript'></script>
+      </p>
+      <p class="Copyright">Copyright &copy; 2011 健身吧 www. jianshen8 .com . 版权所有 闽ICP备 11010592号-1</p>
+    </div>
+    <div class="fr">
+      <img src="/templets/jianshen8/images/foot-logo.png" alt="健身吧" class="foot-logo">
+      <div class="foot-wx-ewm">
+        <img src="/templets/jianshen8/images/wx-erw.jpg" alt="微信公众号" width="90" height="90">
+        <p>微信官方公众号</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
