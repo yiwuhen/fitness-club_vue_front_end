@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
     <!--顶部 logo 搜索 登录注册-->
     <div style="width: 1200px;height: 70px;margin: 0 auto;align-content: center;position: relative; ">
@@ -27,20 +28,29 @@
         active-text-color="#ffd04b"
 
     >
-      <el-menu-item index="index.html"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
-      <el-submenu index="train.html">
-        <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
+      <el-menu-item index="1" style="margin: 0 0 0 20% ">首页</el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">器械</template>
         <el-menu-item index="2-1">器械1</el-menu-item>
         <el-menu-item index="2-2">器械2</el-menu-item>
+        <el-menu-item index="2-3">器械3</el-menu-item>
+        <el-submenu index="2-4">
+          <template slot="title">器械4</template>
+          <el-menu-item index="2-4-1">器械4-1</el-menu-item>
+        </el-submenu>
       </el-submenu>
-
+      <el-submenu index="3">
+        <template slot="title">训练</template>
+        <el-menu-item index="3-1">训练1</el-menu-item>
+        <el-menu-item index="3-2">训练2</el-menu-item>
+      </el-submenu>
       <el-submenu index="4">
-        <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
+        <template slot="title">饮食</template>
         <el-menu-item index="4-1">饮食1</el-menu-item>
         <el-menu-item index="4-2">饮食2</el-menu-item>
       </el-submenu>
-      <el-menu-item index="5" ><a href="/list_page" style="color: #fff8f8;font-size: 24px">资讯</a></el-menu-item>
-      <el-menu-item index="6"><a href="/shooping" >商城</a></el-menu-item>
+      <el-menu-item index="5" disabled>资讯</el-menu-item>
+      <el-menu-item index="6"><a href="https://baidu.com" target="_blank">商城</a></el-menu-item>
     </el-menu>
     <div id="jr-top">
       <div id="jr-left">
@@ -321,7 +331,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>

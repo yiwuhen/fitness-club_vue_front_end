@@ -12,8 +12,8 @@
                     top: 0;
                     bottom: 20px;
                     margin: 0px   15% 0;"></el-input>
-      <a href="/login.html" style="float: right;" class="user">登录</a>
-      <a href="/reg.html" style="float: right" class="user">注册</a>
+      <a href="/login" style="float: right;" class="user">登录</a>
+      <a href="/reg" style="float: right" class="user">注册</a>
     </span>
     </div>
     <!--导航菜单-->
@@ -27,15 +27,15 @@
         active-text-color="#ffd04b"
 
     >
-      <el-menu-item index="index.html"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
-      <el-submenu index="train.html">
-        <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
+      <el-menu-item index="index"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
+      <el-submenu index="train">
+        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
         <el-menu-item index="2-1">器械1</el-menu-item>
         <el-menu-item index="2-2">器械2</el-menu-item>
       </el-submenu>
 
       <el-submenu index="4">
-        <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
+        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
         <el-menu-item index="4-1">饮食1</el-menu-item>
         <el-menu-item index="4-2">饮食2</el-menu-item>
       </el-submenu>
@@ -189,15 +189,15 @@
         <template>
           <!--导航-->
           <div class="butten">
-            <span><a href="/fuwu/about/abouts.html" rel="nofollow">网站简介</a></span>
+            <span><a href="/fuwu/about/abouts" rel="nofollow">网站简介</a></span>
             <el-divider direction="vertical"></el-divider>
-            <span> <a href="/fuwu/about/ads.html" rel="nofollow">商务合作</a></span>
+            <span> <a href="/fuwu/about/ads" rel="nofollow">商务合作</a></span>
             <el-divider direction="vertical"></el-divider>
-            <span> <a href="/fuwu/about/cooperate.html" rel="nofollow">战略合作</a></span>
+            <span> <a href="/fuwu/about/cooperate" rel="nofollow">战略合作</a></span>
             <el-divider direction="vertical"></el-divider>
-            <span>  <a href="/fuwu/about/contact.html" rel="nofollow">联系我们</a></span>
+            <span>  <a href="/fuwu/about/contact" rel="nofollow">联系我们</a></span>
             <el-divider direction="vertical"></el-divider>
-            <span>   <a href="/nav.html">网站导航</a></span>
+            <span>   <a href="/nav">网站导航</a></span>
 
           </div>
         </template>

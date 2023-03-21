@@ -11,8 +11,8 @@
             <el-button slot="append" icon="el-icon-search" style="background: #d52f04;border-radius: 0px"></el-button>
           </el-input>
         </div>
-        <a href="/login.html"  style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
-        <a href="/reg.html"  style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
+        <a href="/login"  style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
+        <a href="/reg"  style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
       </span>
     </div>
     <!--导航结束-->
@@ -27,15 +27,15 @@
         active-text-color="#ffd04b"
 
     >
-      <el-menu-item index="index.html"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
-      <el-submenu index="train.html">
-        <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
+      <el-menu-item index="index"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
+      <el-submenu index="train">
+        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
         <el-menu-item index="2-1">器械1</el-menu-item>
         <el-menu-item index="2-2">器械2</el-menu-item>
       </el-submenu>
 
       <el-submenu index="4">
-        <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
+        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
         <el-menu-item index="4-1">饮食1</el-menu-item>
         <el-menu-item index="4-2">饮食2</el-menu-item>
       </el-submenu>

@@ -37,6 +37,18 @@ const routes = [
   {
     path: '/usercontrol',
     component: () => import('../views/User/UserControl.vue')
+  },
+  {
+    path: '/reg',
+    component: () => import('../views/User/Reg.vue')
+  },
+  {
+    path: '/login',
+    component: () => import('../views/User/Login.vue')
+  },
+  {
+    path: '/kinniku',
+    component: () => import('../views/OfficialWebsite/kinniku-9.vue')
   }
 ]
 
