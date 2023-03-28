@@ -13,6 +13,7 @@
         </div>
         <a href="/login"  style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
         <a href="/reg"  style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
+        <a href="/usercontrol"  style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
       </span>
     </div>
     <!--导航结束-->

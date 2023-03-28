@@ -16,6 +16,7 @@
                     margin: 0px   15% 0;"></el-input>
       <a href="/login"  style="float: right;" class="user">登录</a>
       <a href="/reg"  style="float: right" class="user">注册</a>
+      <a href="/usercontrol"  style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
     </span>
         </div>
         <!--导航菜单-->
@@ -232,6 +233,7 @@ export default {
 </script>
 
 <style>
+
 .el-header{
   padding: 0 10px;
 }

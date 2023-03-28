@@ -15,6 +15,7 @@
                     margin: 0px   15% 0;"></el-input>
       <a href="/login.html" style="float: right;" class="user">登录</a>
       <a href="/reg.html" style="float: right" class="user">注册</a>
+      <a href="/usercontrol"  style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
     </span>
     </div>
     <!--导航菜单-->
@@ -348,6 +349,14 @@ export default {
 </script>
 
 <style>
+a{
+  text-decoration: none;/*无下划线*/
+}
+.el-header a{
+  text-decoration: none;/*无下划线*/
+  font-size: 24px;
+  color: #333334;
+}
 .user {
   text-decoration: none; /*无下划线*/
   font-size: 24px;

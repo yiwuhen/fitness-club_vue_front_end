@@ -12,6 +12,7 @@
         </div>
         <a href="/login"  style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
         <a href="/reg"  style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
+        <a href="/usercontrol"  style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
       </span>
     </div>
     <!--导航菜单-->
@@ -43,9 +44,9 @@
     <!-- 首页主banner -->
     <div style="margin: 0 auto;">
       <template>
-        <el-carousel ndicator-position="outside" style="height: 365px;width: 100%;">
-          <el-carousel-item v-for="item in 4" :key="item" style="margin: 0 auto;height: 365px">
-            <img src="https://www.jianshen8.com/uploads/181015/banner2(1).jpg" alt="" width="1400px" height="365px">
+        <el-carousel ndicator-position="outside" style="height: 400px;">
+          <el-carousel-item v-for="item in 4" :key="item" style="margin: 0 auto;height: 400px">
+            <img src="https://www.jianshen8.com/uploads/181015/banner2(1).jpg" alt="" width="1600px" height="400px">
           </el-carousel-item>
         </el-carousel>
       </template>
@@ -331,7 +332,14 @@ export default {
 </script>
 
 <style>
-
+a{
+  text-decoration: none;/*无下划线*/
+}
+.el-header a{
+  text-decoration: none;/*无下划线*/
+  font-size: 24px;
+  color: #333334;
+}
 .el-header a{
   text-decoration: none;/*无下划线*/
   font-size: 24px;

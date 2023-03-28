@@ -14,6 +14,8 @@
                     margin: 0px   15% 0;"></el-input>
       <a href="/login" style="float: right;" class="user">登录</a>
       <a href="/reg" style="float: right" class="user">注册</a>
+      <a href="/usercontrol"  style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
+
     </span>
     </div>
     <!--导航菜单-->
@@ -42,7 +44,6 @@
       <el-menu-item index="5" ><a href="/list_page" style="color: #fff8f8;font-size: 24px">资讯</a></el-menu-item>
       <el-menu-item index="6"><a href="/shooping" target="_blank">商城</a></el-menu-item>
     </el-menu>
-    肌肉
     <!--  上中下-->
     <el-container style="  width:1200px ;margin: 0 auto;height: auto">
       <!-- 上面：表格-->
@@ -291,6 +292,14 @@ export default {
 </script>
 
 <style>
+a{
+  text-decoration: none;/*无下划线*/
+}
+.el-header a{
+  text-decoration: none;/*无下划线*/
+  font-size: 24px;
+  color: #333334;
+}
 .user {
   text-decoration: none; /*无下划线*/
   font-size: 24px;
