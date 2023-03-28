@@ -70,8 +70,12 @@
                 <!--左边顶部第一个-->
                 <el-col :gutter="24" style="width: 500px;">
                   <div>
+
                     <el-card class="box-card"style="width: 590px;padding: 1px" >
-                      <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg" style="width: 550px;height: 335px;">
+                      <a href="">
+                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg" style="width: 550px;height: 335px;">
+
+                      </a>
                     </el-card>
                   </div>
                 </el-col>
@@ -81,8 +85,10 @@
                 <!--左下1-->
                 <el-col :span="12">
                   <div>
-                    <el-card class="box-card"style="width:284px;padding: 1px" >
-                      <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094741_1.jpg" style="width: 250px;height: 152px;">
+                    <el-card class="box-card" style="width:284px;padding: 1px" >
+                      <a href="">
+                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094741_1.jpg" style="width: 250px;height: 152px;">
+                      </a>
                     </el-card>
                   </div>
                 </el-col>
@@ -90,7 +96,9 @@
                 <el-col :span="12">
                   <div>
                     <el-card class="box-card"style="width: 284px;padding: 1px" >
-                      <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619095208_1.jpg" style="width: 250px;height: 152px;" >
+                      <a href="">
+                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619095208_1.jpg" style="width: 250px;height: 152px;" >
+                      </a>
                     </el-card>
                   </div>
                 </el-col>
@@ -108,10 +116,12 @@
                     <el-card class="box-card"style="width: 590px;padding: 1px" >
                       <el-row :gutter="5">
                         <el-col :span="12">
-                          <img src="https://www.jianshen8.com/uploads/allimg/200602/24_200602102425_1-lp.jpg" style="width: 250px;height: 152px;" >
+                          <a href="">
+                            <img src="https://www.jianshen8.com/uploads/allimg/200602/24_200602102425_1-lp.jpg" style="width: 250px;height: 152px;" >
+                          </a>
                         </el-col>
                         <el-col :span="12">
-                          <p><a href="">增肌吃什么水果合适</a></p>
+                          <p><a href=""  style=" font-size: 20px;color: #1a1a1a; ">增肌吃什么水果合适</a></p>
                           我们都知道一个人经常健身的话，对身体是有帮助的，如增肌、减肥等等。一个人怎么增肌，其实是有很多增肌方...
                         </el-col>
                       </el-row>
@@ -131,7 +141,9 @@
                               style="width: 100%">
                             <el-table-column
                                 prop="address"
-                                label="文章名">
+                                label="文章名"
+                                @select="viewDetails()"
+                            >
                             </el-table-column>
                             <el-table-column
                                 prop="date"
@@ -176,7 +188,7 @@
                           <img src="https://www.jianshen8.com/uploads/allimg/200801/24_200801095432_1-lp.jpg" style="width: 250px;height: 152px;" >
                         </el-col>
                         <el-col :span="12">
-                          <p><a href="">女生睡前减肥瘦身动作大全</a></p>
+                          <p><a href="" style=" font-size: 20px;color: #1a1a1a; ">女生睡前减肥瘦身动作大全</a></p>
                           一个人该如何减肥瘦身，是有许多减肥方法的，可是想要减肥瘦身不是一件生...
                         </el-col>
                       </el-row>
@@ -326,6 +338,10 @@ export default {
   methods:{
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    viewDetails(){
+      this.$router.push('/')
+
     }
   }
 }
