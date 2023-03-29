@@ -138,6 +138,7 @@
                         <template>
                           <el-table
                               :data="eatData"
+                              @row-click="viewDetails"
                               style="width: 100%">
                             <el-table-column
                                 prop="address"
@@ -340,7 +341,7 @@ export default {
       console.log(key, keyPath);
     },
     viewDetails(){
-      this.$router.push('/')
+      this.$router.push('/detail')
 
     }
   }
