@@ -4,7 +4,9 @@
     <!--顶部 logo 搜索 登录注册-->
     <div style="width: 1200px;height: 70px;margin: 0 auto;align-content: center;position: relative; ">
     <span>
-      <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
+     <a href="/">
+          <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
+        </a>
       <el-input v-model="el_input" class="el-input__icon "
                 suffix-icon="el-icon-search"
                 placeholder="请输入内容"

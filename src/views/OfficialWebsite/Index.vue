@@ -3,7 +3,10 @@
     <!--顶部 logo 搜索 登录注册-->
     <div  style="width: 1200px;height: 70px;margin: 0 auto;align-content: center;position: relative; ">
       <span>
-        <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
+        <a href="/">
+          <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
+        </a>
+
         <div style="float: right;position: relative;top: 12px;right: 400px ;width: 400px">
           <el-input placeholder="请输入搜索的内容" style="border: 1px solid #d52f04 ;border-radius: 0px;padding: 0px">
             <!--slot="append"作用是把按钮追加在文本框里面-->
@@ -350,7 +353,6 @@ export default {
     },
     viewDetails(){
       this.$router.push('/detail')
-
     },
 
   },
