@@ -141,13 +141,13 @@
                               @row-click="viewDetails"
                               style="width: 100%">
                             <el-table-column
-                                prop="address"
+                                prop="title"
                                 label="文章名"
                                 @select="viewDetails()"
                             >
                             </el-table-column>
                             <el-table-column
-                                prop="date"
+                                prop="gmtCreate"
                                 label="更新时间"
                                 width="180" style="float: right">
                             </el-table-column>
@@ -208,11 +208,11 @@
                               :data="tableData"
                               style="width: 100%">
                             <el-table-column
-                                prop="address"
+                                prop="title"
                                 label="文章名">
                             </el-table-column>
                             <el-table-column
-                                prop="date"
+                                prop="gmtCreate"
                                 label="更新时间"
                                 width="180" style="float: right">
                             </el-table-column>
@@ -306,44 +306,60 @@ export default {
       input: '',
       fits: [ 'cover'],
       url: 'https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg',
-      eatData: [{
-        date: '2016-05-02',
-        address: '健身使用哪些补剂和补剂的正确方法'
-      }, {
-        date: '2016-05-04',
-        address: '健康低脂食物有哪些 这些食物能帮我们减肥'
-      }, {
-        date: '2016-05-01',
-        address: '初次辟谷减肥的正确方法 初次辟谷要注意什么 '
-      }, {
-        date: '2016-05-03',
-        address: '汤类低脂食物 清肠排毒速瘦 '
-      }],
-      tableData: [{
-        date: '2016-05-02',
-        address: '最简单的瑜伽瘦身动作有哪些'
-      }, {
-        date: '2016-05-04',
-        address: '腹部减肥五天狂瘦十斤的方法有哪些'
-      }, {
-        date: '2016-05-01',
-        address: '健身房初学者减脂计划表'
-      }, {
-        date: '2016-05-03',
-        address: '五个简单瘦身动作 让你轻松瘦身'
-      }]
+      eatData: [],
+      tableData: []
     }
 
 
   },
   methods:{
+    loadCategoryList() {
+      let url = 'http://localhost:10001/articles/'+ 48 + '/list';
+      console.log('url = ' + url);
+
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.eatData = responseBody.data;
+
+      });
+    },
+    loadCategoryListXl() {
+      let url = 'http://localhost:10001/articles/'+ 29 + '/list';
+      console.log('url = ' + url);
+
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.tableData = responseBody.data;
+
+      });
+    },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
     viewDetails(){
       this.$router.push('/detail')
 
-    }
+    },
+
+  },
+  mounted() {
+    //启动时加载饮食文章列表
+    this.loadCategoryList();
+    //启动时加载器械文章列表
+    this.loadCategoryListXl();
+
   }
 }
 </script>
