@@ -72,38 +72,55 @@
               <el-row :gutter="11" style="padding-top: 10px;margin-bottom: 13px">
                 <!--左边顶部第一个-->
                 <el-col :gutter="24" style="width: 500px;">
-                  <div>
-
-                    <el-card class="box-card"style="width: 590px;padding: 1px" >
-                      <a href="">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg" style="width: 550px;height: 335px;">
-
-                      </a>
-                    </el-card>
+                  <el-card style="width: 590px;padding: 1px;padding-bottom: 25px" >
+                  <div class="item">
+                    <div class="item-image">
+                          <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg" style="width: 550px;height: 335px;">
+                    </div>
+                    <div class="item-text">
+                      <div class="item-text-wrapper">
+                        <h2 class="item-text-title">我是标题</h2>
+                        <p class="item-text-dek">我是内容</p>
+                      </div>
+                    </div>
                   </div>
+                  </el-card>
                 </el-col>
               </el-row>
               <!--左下两个-->
               <el-row :gutter="14">
                 <!--左下1-->
                 <el-col :span="12">
-                  <div>
-                    <el-card class="box-card" style="width:284px;padding: 1px" >
-                      <a href="">
+                    <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px" >
+                      <div class="item"style="height: 152px">
+                        <div class="item-image" >
                         <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094741_1.jpg" style="width: 250px;height: 152px;">
-                      </a>
+                        </div>
+                        <div class="item-text">
+                          <div class="item-text-wrapper">
+                            <h2 class="item-text-title">我是标题</h2>
+                            <p class="item-text-dek">我是内容</p>
+                          </div>
+                        </div>
+                      </div>
                     </el-card>
-                  </div>
                 </el-col>
                 <!--左下2-->
                 <el-col :span="12">
-                  <div>
-                    <el-card class="box-card"style="width: 284px;padding: 1px" >
-                      <a href="">
+                  <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px" >
+                    <div class="item"style="height: 152px">
+                      <div class="item-image" >
                         <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619095208_1.jpg" style="width: 250px;height: 152px;" >
-                      </a>
-                    </el-card>
-                  </div>
+                      </div>
+                      <div class="item-text">
+                        <div class="item-text-wrapper">
+                          <h2 class="item-text-title">我是标题</h2>
+                          <p class="item-text-dek">我是内容</p>
+                        </div>
+                      </div>
+                    </div>
+                  </el-card>
+
                 </el-col>
               </el-row>
             </div>
@@ -209,6 +226,7 @@
                         <template>
                           <el-table
                               :data="tableData"
+                              @row-click="viewDetails"
                               style="width: 100%">
                             <el-table-column
                                 prop="title"
@@ -234,32 +252,57 @@
             <div class="grid-content bg-purple" style="height: 630px;">
               <!--内部继续分为三部分-->
               <el-row :gutter="11" style="padding-top: 10px;margin-bottom: 13px">
-                <!--左边顶部第一个-->
+                <!--第二部分右边顶部第一个-->
                 <el-col :gutter="24" style="width: 500px;">
-                  <div>
-                    <el-card class="box-card" style="width: 590px;padding: 1px;" >
-                      <img src="https://www.jianshen8.com/uploads/allimg/200805/24_200805093957_1-lp.jpg" style="width: 550px;height: 335px;">
-                    </el-card>
-                  </div>
+                  <el-card style="width: 590px;padding: 1px ;padding-bottom: 25px" >
+                    <div class="item">
+                      <div class="item-image">
+                        <img src="https://www.jianshen8.com/uploads/allimg/200805/24_200805093957_1-lp.jpg" style="width: 550px;height: 335px;">
+                      </div>
+                      <div class="item-text">
+                        <div class="item-text-wrapper">
+                          <h2 class="item-text-title">我是标题</h2>
+                          <p class="item-text-dek">我是内容</p>
+                        </div>
+                      </div>
+                    </div>
+                  </el-card>
                 </el-col>
               </el-row>
               <!--左下两个-->
               <el-row :gutter="14">
                 <!--左下1-->
                 <el-col :span="12">
-                  <div>
-                    <el-card class="box-card"style="width:284px;padding: 1px" >
-                      <img src="https://www.jianshen8.com/uploads/allimg/200807/24_200807100033_1-lp.jpg" style="width: 250px;height: 152px;">
-                    </el-card>
-                  </div>
+                  <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px" >
+                    <div class="item"style="height: 152px">
+                      <div class="item-image" >
+                        <img src="https://www.jianshen8.com/uploads/allimg/200807/24_200807100033_1-lp.jpg" style="width: 250px;height: 152px;">
+                      </div>
+                      <div class="item-text">
+                        <div class="item-text-wrapper">
+                          <h2 class="item-text-title">我是标题</h2>
+                          <p class="item-text-dek">我是内容</p>
+                        </div>
+                      </div>
+                    </div>
+                  </el-card>
+
                 </el-col>
                 <!--左下2-->
                 <el-col :span="12">
-                  <div>
-                    <el-card class="box-card"style="width: 284px;padding: 1px" >
-                      <img src="https://www.jianshen8.com/uploads/allimg/200805/24_200805105338_1-lp.jpg" style="width: 250px;height: 152px;" >
-                    </el-card>
-                  </div>
+                  <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px" >
+                    <div class="item"style="height: 152px">
+                      <div class="item-image" >
+                        <img src="https://www.jianshen8.com/uploads/allimg/200805/24_200805105338_1-lp.jpg" style="width: 250px;height: 152px;" >
+                      </div>
+                      <div class="item-text">
+                        <div class="item-text-wrapper">
+                          <h2 class="item-text-title">我是标题</h2>
+                          <p class="item-text-dek">我是内容</p>
+                        </div>
+                      </div>
+                    </div>
+                  </el-card>
                 </el-col>
               </el-row>
             </div>
@@ -365,7 +408,118 @@ export default {
   }
 }
 </script>
+<style type="text/css">
 
+/* 大盒子 */
+.item-grid {
+  max-width: 1000px;
+  margin: 100px  auto;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* 小盒子 */
+.item {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 335px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.item::after {
+  content: " ";
+  display: block;
+  background-color: inherit;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 没悬浮的时候，隐藏在图片下方 */
+  transform: translateY(100%);
+  transition: transform 0.5s ;
+}
+
+/* 悬浮后覆盖在图片上面*/
+.item:hover:after {
+  transform:   translateY(0%) ;
+
+}
+
+
+.item:hover .item-image {
+  transform: scale(1.1);
+}
+
+.item:hover .item-text {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.item-image {
+  height: auto;
+  backface-visibility: hidden;
+  transition: transform 1.2s ;
+}
+
+.item-image::before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+  overflow: hidden;
+
+
+}
+
+.item-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.item-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.5;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  transition: transform 1s ;
+  /* 文字初始的位置 */
+  transform: translateY(45%);
+}
+
+.item-text-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.item-text-title {
+  font-size: 36px;
+  padding: 0 15px;
+  margin: 5px 0 0 0;
+}
+
+.item-text-dek {
+  font-size: 16px;
+  opacity: 0.7;
+  margin: 0;
+}
+</style>
 <style>
 a{
   text-decoration: none;/*无下划线*/
