@@ -159,15 +159,16 @@
                   <div>
                     <el-card class="box-card" style=" padding-top: 10px;width: 593px;height: 375px;">
                       <div>
-                        <template>
+                        <template >
                           <el-table
                               :data="eatData"
-                              @row-click="viewDetails"
+                              slot-scope="scope"
+
                               style="width: 100%">
                             <el-table-column
                                 prop="title"
                                 label="文章名"
-                                @select="viewDetails()"
+                                @row-click="viewDetails(scope.data)"
                             >
                             </el-table-column>
                             <el-table-column
@@ -399,7 +400,8 @@ export default {
 
 
         console.log("时间显示测试：");
-        console.log(this.tableData[1]);
+       /* console.log(this.tableData[1]);*/
+
         console.log(this.eatData);
 
       });
@@ -410,8 +412,13 @@ export default {
     viewDetails(row) {
       // 获取点击表格的信息
       console.log('表格被点击了');
-      console.log(this.eatData);
-      console.log(this.eatData.id);
+      //console.log(row.eatData);
+      //console.log(this.eatData);
+      console.log(row.id);
+      console.log(row.title);
+
+
+      //console.log(this.eatData[row-1]);
       // 跳转到信息对应文章详情
       //this.$router.push('/articles/'+5)
     },
