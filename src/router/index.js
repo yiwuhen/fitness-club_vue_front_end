@@ -49,6 +49,10 @@ const routes = [
   {
     path: '/kinniku',
     component: () => import('../views/OfficialWebsite/kinniku-9.vue')
+  },
+  {
+    path: '/article',
+    component: () => import('../views/OfficialWebsite/ArticlesDetail.vue')
   }
 ]
 

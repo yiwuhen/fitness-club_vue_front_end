@@ -162,8 +162,6 @@
                         <template >
                           <el-table
                               :data="eatData"
-                              slot-scope="scope"
-
                               style="width: 100%">
                             <el-table-column
                                 prop="title"
