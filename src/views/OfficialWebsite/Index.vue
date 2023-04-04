@@ -162,15 +162,16 @@
                         <template >
                           <el-table
                               :data="eatData"
+                              @row-click="viewDetails"
+                              height="350"
                               style="width: 100%">
                             <el-table-column
                                 prop="title"
                                 label="文章名"
-                                @row-click="viewDetails(scope.data)"
                             >
                             </el-table-column>
                             <el-table-column
-                                prop="gmtCreate"
+                                prop="gmtModified"
                                 label="更新时间"
                                 width="180" style="float: right">
                             </el-table-column>
@@ -230,6 +231,7 @@
                         <template>
                           <el-table
                               :data="tableData"
+                              height="350"
                               @row-click="viewDetails"
                               style="width: 100%">
                             <el-table-column
@@ -237,7 +239,7 @@
                                 label="文章名">
                             </el-table-column>
                             <el-table-column
-                                prop="gmtCreate"
+                                prop="gmtModified"
                                 label="更新时间"
                                 width="180" style="float: right">
                             </el-table-column>
@@ -340,13 +342,11 @@
 
         </div>
       </template>
-
       <div class="butten">
         <p style="color:#b3b3b3;">Copyright © 2011 健身吧 www. jianshen .com . 版权所有 <a href="http://beian.miit.gov.cn/"
                                                                                     rel="nofollow">
           京ICP备2022036109号-1</a></p>
       </div>
-
     </div>
   </div>
 </template>
@@ -361,7 +361,7 @@ export default {
       fits: ['cover'],
       url: 'https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg',
       eatData: [],
-      tableData: []
+      tableData: [],
     }
 
 
@@ -374,12 +374,12 @@ export default {
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
           .get(url).then((response) => {
-        let responseBody = response.data;
+        let article = response.data;
         //获取状态
-        console.log('state=' + responseBody.state);
+        console.log('state=' + article.state);
         //获取后端传来的信息
-        console.log('message=' + responseBody.message);
-        this.eatData = responseBody.data;
+        console.log('message=' + article.message);
+        this.eatData = article.data;
 
       });
     },
@@ -410,24 +410,46 @@ export default {
     viewDetails(row) {
       // 获取点击表格的信息
       console.log('表格被点击了');
-      //console.log(row.eatData);
-      //console.log(this.eatData);
       console.log(row.id);
       console.log(row.title);
+      let id = row.id;
+      let title =row.title
+      this.$router.push(
+          {
+            //添加需要传值到那个页面的路径
+            path:'/article',
+            //携带需要传递的参数
+            query:{
+              id:id,
+              title:title
+            }
 
+          })
 
-      //console.log(this.eatData[row-1]);
-      // 跳转到信息对应文章详情
-      //this.$router.push('/articles/'+5)
     },
+    GetArticles1(){
+      let url = 'http://localhost:10001/articles/' + 13;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.eatData = responseBody.data;
 
+      });
+    }
   },
   mounted() {
     //启动时加载饮食文章列表
     this.loadCategoryList();
     //启动时加载器械文章列表
     this.loadCategoryListXl();
-
+    //获取第1部分大图信息
+    this.GetArticles1();
   }
 }
 </script>

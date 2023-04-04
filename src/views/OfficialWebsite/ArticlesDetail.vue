@@ -36,14 +36,17 @@
     </el-menu>
     <!--  上中下-->
     <el-container style="width:1200px ;margin: 0 auto;height: auto">
-      <!-- 上面：表格-->
-      <el-header style="padding: 10px 20px">
-      </el-header>
       <!--文章详情内容 -->
       <el-main>
         <div >
-          <p style="font-size: 40px;font-weight: bold">{{ tableData.title }}</p>
+          <!-- 标题 -->
+          <p style="font-size: 40px;font-weight: bold;margin-bottom: 1px;">{{ tableData.title }} </p>
+          <!-- 时间 -->
+          <div style="text-align: right">
+            <b style="font-size: 12px;text-align:right;color: #909399">{{tableData.gmtModified}}</b>
+          </div>
           <hr>
+          <!-- 文章详情 -->
           <p v-html =" tableData.content"></p>
         </div>
       </el-main>
@@ -120,13 +123,20 @@ export default {
 
     },
     loadArticleList() {
-      let url = 'http://localhost:10001/articles/8';
+      //接受上级页面传来的id参数
+      let id = this.$route.query.id;
+
+      console.log(this.$route)
+      console.log("文章id:"+id)
+
+      let url = 'http://localhost:10001/articles/'+ id ;
       console.log('url = ' + url);
 
       this.axios
           .get(url).then((response) => {
         let responseBody = response.data;
         this.tableData = responseBody.data;
+        console.log("文章标题:"+this.tableData.title)
       });
     }
 
