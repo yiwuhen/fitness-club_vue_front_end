@@ -80,8 +80,8 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">我是标题</h2>
-                          <p class="item-text-dek">我是内容</p>
+                          <h2 class="item-text-title">{{ Articles1.title }}</h2>
+                          <p class="item-text-dek">{{ Articles1.description }}</p>
                         </div>
                       </div>
                     </div>
@@ -100,8 +100,8 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">我是标题</h2>
-                          <p class="item-text-dek">我是内容</p>
+                          <h2 class="item-text-title">{{ Articles2.title}}</h2>
+                          <p class="item-text-dek">{{Articles2.description}}</p>
                         </div>
                       </div>
                     </div>
@@ -117,7 +117,7 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">我是标题</h2>
+                          <h2 class="item-text-title">{{ Articles3.title }}</h2>
                           <p class="item-text-dek">我是内容</p>
                         </div>
                       </div>
@@ -268,8 +268,8 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">我是标题</h2>
-                          <p class="item-text-dek">我是内容</p>
+                          <h2 class="item-text-title">{{ Articles4.title }}</h2>
+                          <p class="item-text-dek">{{ Articles4.description }}</p>
                         </div>
                       </div>
                     </div>
@@ -288,8 +288,8 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">我是标题</h2>
-                          <p class="item-text-dek">我是内容</p>
+                          <h2 class="item-text-title">{{ Articles5.title }}</h2>
+                          <p class="item-text-dek">{{ Articles5.description }}</p>
                         </div>
                       </div>
                     </div>
@@ -306,8 +306,8 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">我是标题</h2>
-                          <p class="item-text-dek">我是内容</p>
+                          <h2 class="item-text-title">{{ Articles6.title }}</h2>
+                          <p class="item-text-dek">{{ Articles6.description }}</p>
                         </div>
                       </div>
                     </div>
@@ -362,6 +362,12 @@ export default {
       url: 'https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg',
       eatData: [],
       tableData: [],
+      Articles1:[],
+      Articles2:[],
+      Articles3:[],
+      Articles4:[],
+      Articles5:[],
+      Articles6:[],
     }
 
 
@@ -438,10 +444,86 @@ export default {
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
         console.log('message=' + responseBody.message);
-        this.eatData = responseBody.data;
+        this.Articles1 = responseBody.data;
 
       });
-    }
+    },
+    GetArticles2(){
+      let url = 'http://localhost:10001/articles/' + 16;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles2 = responseBody.data;
+
+      });
+    },
+    GetArticles3(){
+      let url = 'http://localhost:10001/articles/' + 17;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles3 = responseBody.data;
+
+      });
+    },
+    GetArticles4(){
+      let url = 'http://localhost:10001/articles/' + 10;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles4 = responseBody.data;
+
+      });
+    },
+    GetArticles5(){
+      let url = 'http://localhost:10001/articles/' + 18;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles5 = responseBody.data;
+
+      });
+    },
+    GetArticles6(){
+      let url = 'http://localhost:10001/articles/' + 19;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles6 = responseBody.data;
+
+      });
+    },
+
   },
   mounted() {
     //启动时加载饮食文章列表
@@ -450,6 +532,11 @@ export default {
     this.loadCategoryListXl();
     //获取第1部分大图信息
     this.GetArticles1();
+    this.GetArticles2();
+    this.GetArticles3();
+    this.GetArticles4();
+    this.GetArticles5();
+    this.GetArticles6();
   }
 }
 </script>
@@ -486,7 +573,7 @@ export default {
   left: 0;
   /* 没悬浮的时候，隐藏在图片下方 */
   transform: translateY(100%);
-  transition: transform 0.5s;
+  transition: transform 0.3s;
 }
 
 /* 悬浮后覆盖在图片上面*/
