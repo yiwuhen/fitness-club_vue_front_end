@@ -37,7 +37,10 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">{{ Articles1.title }}</h2>
+                          <a :href="'/article?id='+Articles1.id">
+                            <h2 class="item-text-title">{{ Articles1.title }}</h2>
+                          </a>
+
                           <p class="item-text-dek">{{ Articles1.description }}</p>
                         </div>
                       </div>
@@ -57,7 +60,10 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">{{ Articles2.title}}</h2>
+                          <a :href="'/article?id='+Articles2.id">
+                            <h2 class="item-text-title">{{ Articles2.title}}</h2>
+                          </a>
+
                           <p class="item-text-dek">{{Articles2.description}}</p>
                         </div>
                       </div>
@@ -74,8 +80,11 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">{{ Articles3.title }}</h2>
-                          <p class="item-text-dek">我是内容</p>
+                          <a :href="'/article?id='+Articles3.id">
+                            <h2 class="item-text-title">{{ Articles3.title }}</h2>
+                            <p class="item-text-dek">我是内容</p>
+                          </a>
+
                         </div>
                       </div>
                     </div>
@@ -96,14 +105,14 @@
                     <el-card class="box-card" style="width: 590px;padding: 1px">
                       <el-row :gutter="5">
                         <el-col :span="12">
-                          <a href="">
-                            <img src="https://www.jianshen8.com/uploads/allimg/200602/24_200602102425_1-lp.jpg"
+                          <a :href="'/article?id='+Articles7.id">
+                            <img :src=Articles7.url
                                  style="width: 250px;height: 152px;">
                           </a>
                         </el-col>
                         <el-col :span="12">
-                          <p><a href="" style=" font-size: 20px;color: #1a1a1a; ">增肌吃什么水果合适</a></p>
-                          我们都知道一个人经常健身的话，对身体是有帮助的，如增肌、减肥等等。一个人怎么增肌，其实是有很多增肌方...
+                          <p><a :href="'/article?id='+Articles7.id" style=" font-size: 20px;color: #1a1a1a; ">{{ Articles7.title}}</a></p>
+                          {{ Articles7.description}}
                         </el-col>
                       </el-row>
                     </el-card>
@@ -167,12 +176,14 @@
                     <el-card class="box-card" style="width: 590px;padding: 1px">
                       <el-row :gutter="5">
                         <el-col :span="12">
-                          <img src="https://www.jianshen8.com/uploads/allimg/200801/24_200801095432_1-lp.jpg"
-                               style="width: 250px;height: 152px;">
+                          <a :href="'/article?id='+Articles8.id">
+                            <img :src=Articles8.url
+                                 style="width: 250px;height: 152px;">
+                          </a>
                         </el-col>
                         <el-col :span="12">
-                          <p><a href="" style=" font-size: 20px;color: #1a1a1a; ">女生睡前减肥瘦身动作大全</a></p>
-                          一个人该如何减肥瘦身，是有许多减肥方法的，可是想要减肥瘦身不是一件生...
+                          <p><a :href="'/article?id='+Articles8.id" style=" font-size: 20px;color: #1a1a1a; ">{{ Articles8.title }}</a></p>
+                          {{ Articles8.description}}
                         </el-col>
                       </el-row>
                     </el-card>
@@ -225,8 +236,11 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">{{ Articles4.title }}</h2>
-                          <p class="item-text-dek">{{ Articles4.description }}</p>
+                          <a :href="'/article?id='+Articles4.id">
+                            <h2 class="item-text-title">{{ Articles4.title }}</h2>
+                            <p class="item-text-dek">{{ Articles4.description }}</p>
+
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -245,8 +259,10 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">{{ Articles5.title }}</h2>
-                          <p class="item-text-dek">{{ Articles5.description }}</p>
+                          <a :href="'/article?id='+Articles5.id">
+                            <h2 class="item-text-title">{{ Articles5.title }}</h2>
+                            <p class="item-text-dek">{{ Articles5.description }}</p>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -263,8 +279,11 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <h2 class="item-text-title">{{ Articles6.title }}</h2>
-                          <p class="item-text-dek">{{ Articles6.description }}</p>
+                          <a :href="'/article?id='+Articles6.id">
+
+                            <h2 class="item-text-title">{{ Articles6.title }}</h2>
+                            <p class="item-text-dek">{{ Articles6.description }}</p>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -298,6 +317,8 @@ export default {
       Articles4:[],
       Articles5:[],
       Articles6:[],
+      Articles7:[],
+      Articles8:[],
     }
 
 
@@ -320,7 +341,7 @@ export default {
       });
     },
     loadCategoryListXl() {
-      let url = 'http://localhost:10001/articles/' + 29 + '/list';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=3&page=1&pageSize=5';
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -330,7 +351,7 @@ export default {
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
         console.log('message=' + responseBody.message);
-        this.tableData = responseBody.data;
+        this.tableData = responseBody.data.list;
 
 
         console.log("时间显示测试：");
@@ -453,6 +474,36 @@ export default {
 
       });
     },
+    GetArticles7(){
+      let url = 'http://localhost:10001/articles/picture/' + 33;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles7 = responseBody.data;
+
+      });
+    },
+    GetArticles8(){
+      let url = 'http://localhost:10001/articles/picture/' + 28;
+      console.log('url = ' + url);
+      this.axios
+          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
+          .get(url).then((response) => {
+        let responseBody = response.data;
+        //获取状态
+        console.log('state=' + responseBody.state);
+        //获取后端传来的信息
+        console.log('message=' + responseBody.message);
+        this.Articles8 = responseBody.data;
+
+      });
+    },
 
   },
   mounted() {
@@ -467,6 +518,8 @@ export default {
     this.GetArticles4();
     this.GetArticles5();
     this.GetArticles6();
+    this.GetArticles7();
+    this.GetArticles8();
   }
 }
 </script>

@@ -149,6 +149,10 @@ export default {
 }
 </script>
 <style type="text/css">
+a, a:visited, a:link, a:hover{
+  color:white;
+}
+
 
 /* 大盒子 */
 .item-grid {
