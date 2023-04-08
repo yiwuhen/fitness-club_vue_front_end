@@ -5,7 +5,7 @@
         <div>
           <!--    一级分类        -->
           <li style="padding: 10px 30px 10%;margin: 0 auto;">
-            <span style="width: 144px;font-size: 18px;font-weight: bold;color: rgb(213, 47, 4) ">肌肉</span>
+            <span style="width: 144px;font-size: 18px;font-weight: bold;color: rgb(213, 47, 4) ">饮食</span>
           </li>
         </div>
 
@@ -41,10 +41,10 @@
             </a></p>
             <!--热度和日期-->
             <div class="tools">
+              <br>
+              <br>
+              <br>
               <!--浏览量-->
-              <br>
-              <br>
-              <br>
               <i class="el-icon-view" style="margin-left: 15px"></i>
               <span style="color: #f17656;">{{a.pageView}}100</span>人浏览
               <!--日期-->
@@ -57,7 +57,6 @@
           </div>
         </li>
       </ol>
-
     </div>
     <div style="text-align: center">
       <el-pagination style="padding-top: 10px;"
@@ -127,7 +126,7 @@ export default {
     },
     //文章
     loadArticleList(){
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=2&page=1&pageSize=5';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=4&page=1&pageSize=5';
       console.log('url = ' + url);
 
       this.axios
@@ -135,7 +134,7 @@ export default {
           .get(url).then((response) => {
         let responseBody = response.data;
         this.articleArr = responseBody.data.list;
-        console.log(this.articleArr)
+        console.log()
       });
 
     },
@@ -151,7 +150,7 @@ export default {
         this.categoryArr = responseBody.data;
 
         for (var i in this.categoryArr) {  //遍历数组
-          if(this.categoryArr[i].name == "肌肉")
+          if(this.categoryArr[i].name == "饮食")
             this.categoryChildrenArr = (this.categoryArr[i].children
             )
         }

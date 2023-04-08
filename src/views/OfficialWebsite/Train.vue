@@ -1,26 +1,27 @@
 <template>
   <div class="Classification">
-    <ul style="padding: 1px 20px;" >
+    <ul style="padding: 1px 20px;" v-for="c in categoryChildrenArr">
       <div>
-        <div>
-          <!--    一级分类        -->
-          <li style="padding: 10px 30px 10%;margin: 0 auto;">
-            <span style="width: 144px;font-size: 18px;font-weight: bold;color: rgb(213, 47, 4) ">肌肉</span>
-          </li>
-        </div>
+          <div>
+            <!--    一级分类        -->
+                <li style="padding: 10px 30px 10%;margin: 0 auto;">
+                      <span style="width: 144px;font-size: 18px;font-weight: bold;color: rgb(213, 47, 4) ">{{c.name}}</span>
+                  </li>
+          </div>
 
-        <div style="width: 900px;margin: 0 auto;margin-left: 170px;margin-top: 1px">
-          <ul style="padding: 10px ;width: 900px ;padding-top: 5px">
-            <li v-for="c in categoryChildrenArr">
-              <el-button style="width: 100px" @click="LoadSubCategoryArticles(c.id)">
-                <span style="font-size: 16px;">{{c.name}}</span>
-              </el-button>
-            </li>
-          </ul>
-        </div>
+        <!--    二级分类   -->
+              <div style="width: 900px;margin: 0 auto;margin-left: 170px;margin-top: 1px">
+                <ul style="padding: 10px ;width: 900px ;padding-top: 5px">
+                  <li v-for="i in c.children">
+                    <el-button style="width: 100px" @click="LoadSubCategoryArticles(i.id)">
+                      <span style="font-size: 16px;">{{i.name}}</span>
+                    </el-button>
+                </li>
+                </ul>
+              </div>
 
 
-        <el-divider></el-divider>
+            <el-divider></el-divider>
 
       </div>
 
@@ -34,7 +35,7 @@
           <!--中间文字-->
           <div class="hotContent">
             <!--最上边标题-->
-            <h2><a :href="'/article?id='+a.id">{{a.title}}</a></h2>
+            <h2><a href="#">{{a.title}}</a></h2>
             <!--内容简介-->
             <p><a href="#">
               {{a.description}}
@@ -57,7 +58,6 @@
           </div>
         </li>
       </ol>
-
     </div>
     <div style="text-align: center">
       <el-pagination style="padding-top: 10px;"
@@ -127,7 +127,7 @@ export default {
     },
     //文章
     loadArticleList(){
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=2&page=1&pageSize=5';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=3&page=1&pageSize=5';
       console.log('url = ' + url);
 
       this.axios
@@ -135,7 +135,7 @@ export default {
           .get(url).then((response) => {
         let responseBody = response.data;
         this.articleArr = responseBody.data.list;
-        console.log(this.articleArr)
+        console.log()
       });
 
     },
@@ -151,7 +151,7 @@ export default {
         this.categoryArr = responseBody.data;
 
         for (var i in this.categoryArr) {  //遍历数组
-          if(this.categoryArr[i].name == "肌肉")
+          if(this.categoryArr[i].name == "器械")
             this.categoryChildrenArr = (this.categoryArr[i].children
             )
         }

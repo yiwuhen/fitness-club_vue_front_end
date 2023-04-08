@@ -1,52 +1,6 @@
 <template>
   <div id="app">
 
-    <!--顶部 logo 搜索 登录注册-->
-    <div  style="width: 1200px;height: 70px;margin: 0 auto;align-content: center;position: relative; ">
-      <span>
-        <a href="/">
-          <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
-        </a>
-        <div style="float: right;position: relative;top: 12px;right: 400px ;width: 400px">
-          <el-input placeholder="请输入搜索的内容" style="border: 1px solid #d52f04 ;border-radius: 0px;padding: 0px">
-            <!--slot="append"作用是把按钮追加在文本框里面-->
-            <el-button slot="append" icon="el-icon-search" style="background: #d52f04;border-radius: 0px"></el-button>
-          </el-input>
-        </div>
-        <a href="/login"  style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
-        <a href="/reg"  style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
-        <a href="/usercontrol"  style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
-      </span>
-    </div>
-    <!--导航结束-->
-    <!--导航菜单-->
-    <el-menu
-        :default-active="activeIndex2"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b"
-
-    >
-      <el-menu-item index="index"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
-      <el-submenu index="train">
-        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
-        <el-menu-item index="2-1">器械1</el-menu-item>
-        <el-menu-item index="2-2">器械2</el-menu-item>
-      </el-submenu>
-
-      <el-submenu index="4">
-        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
-        <el-menu-item index="4-1">饮食1</el-menu-item>
-        <el-menu-item index="4-2">饮食2</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="5" ><a href="/list_page" style="color: #fff8f8;font-size: 24px">资讯</a></el-menu-item>
-      <el-menu-item index="6"><a href="/shooping" >商城</a></el-menu-item>
-    </el-menu>
-
-
     <div style="width: 1200px;margin: 0 auto;margin-top: 15px">
       <el-breadcrumb separator="/"style="margin-bottom: 10px">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>

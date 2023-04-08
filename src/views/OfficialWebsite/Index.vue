@@ -1,49 +1,6 @@
 <template>
   <div id="app" style="margin: 0 auto">
-    <!--顶部 logo 搜索 登录注册-->
-    <div style="width: 1200px;height: 70px;margin: 0 auto;align-content: center;position: relative; ">
-      <span>
-        <a href="/">
-          <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
-        </a>
 
-        <div style="float: right;position: relative;top: 12px;right: 400px ;width: 400px">
-          <el-input placeholder="请输入搜索的内容" style="border: 1px solid #d52f04 ;border-radius: 0px;padding: 0px">
-            <!--slot="append"作用是把按钮追加在文本框里面-->
-            <el-button slot="append" icon="el-icon-search" style="background: #d52f04;border-radius: 0px"></el-button>
-          </el-input>
-        </div>
-        <a href="/login" style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
-        <a href="/reg" style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
-        <a href="/usercontrol" style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
-      </span>
-    </div>
-    <!--导航菜单-->
-    <el-menu
-        :default-active="activeIndex2"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b"
-
-    >
-      <el-menu-item index="index" style="margin: 0 0 0 20% "><a href="/">首页</a></el-menu-item>
-      <el-submenu index="train">
-        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
-        <el-menu-item index="2-1">器械1</el-menu-item>
-        <el-menu-item index="2-2">器械2</el-menu-item>
-      </el-submenu>
-
-      <el-submenu index="4">
-        <template slot="title"><a href="train" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
-        <el-menu-item index="4-1">饮食1</el-menu-item>
-        <el-menu-item index="4-2">饮食2</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="5"><a href="/list_page" style="color: #fff8f8;font-size: 24px">资讯</a></el-menu-item>
-      <el-menu-item index="6"><a href="/shooping">商城</a></el-menu-item>
-    </el-menu>
     <!-- 首页主banner -->
     <div style="margin: 0 auto;">
       <template>
@@ -75,7 +32,7 @@
                   <el-card style="width: 590px;padding: 1px;padding-bottom: 25px">
                     <div class="item">
                       <div class="item-image">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094307_1.jpg"
+                        <img :src=Articles1.url
                              style="width: 550px;height: 335px;">
                       </div>
                       <div class="item-text">
@@ -95,7 +52,7 @@
                   <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px">
                     <div class="item" style="height: 152px">
                       <div class="item-image">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619094741_1.jpg"
+                        <img :src=Articles2.url
                              style="width: 250px;height: 152px;">
                       </div>
                       <div class="item-text">
@@ -112,7 +69,7 @@
                   <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px">
                     <div class="item" style="height: 152px">
                       <div class="item-image">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200619/5_200619095208_1.jpg"
+                        <img :src=Articles3.url
                              style="width: 250px;height: 152px;">
                       </div>
                       <div class="item-text">
@@ -263,7 +220,7 @@
                   <el-card style="width: 590px;padding: 1px ;padding-bottom: 25px">
                     <div class="item">
                       <div class="item-image">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200805/24_200805093957_1-lp.jpg"
+                        <img :src=Articles4.url
                              style="width: 550px;height: 335px;">
                       </div>
                       <div class="item-text">
@@ -283,7 +240,7 @@
                   <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px">
                     <div class="item" style="height: 152px">
                       <div class="item-image">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200807/24_200807100033_1-lp.jpg"
+                        <img :src=Articles5.url
                              style="width: 250px;height: 152px;">
                       </div>
                       <div class="item-text">
@@ -301,7 +258,7 @@
                   <el-card class="box-card" style="width:284px;padding: 1px;padding-bottom: 25px">
                     <div class="item" style="height: 152px">
                       <div class="item-image">
-                        <img src="https://www.jianshen8.com/uploads/allimg/200805/24_200805105338_1-lp.jpg"
+                        <img :src=Articles6.url
                              style="width: 250px;height: 152px;">
                       </div>
                       <div class="item-text">
@@ -320,34 +277,7 @@
         </el-row>
       </div>
     </div>
-    <!--底部-->
-    <div style="background: #555;
-        height: 112px;
-        width: 100%;
-        padding-top:5px;
-        float : right ;
-        bottom : 0px ;">
-      <template>
-        <div class="butten">
 
-          <span><a href="/fuwu/about/abouts" rel="nofollow">网站简介</a></span>
-          <el-divider direction="vertical"></el-divider>
-          <span> <a href="/fuwu/about/ads" rel="nofollow">商务合作</a></span>
-          <el-divider direction="vertical"></el-divider>
-          <span> <a href="/fuwu/about/cooperate" rel="nofollow">战略合作</a></span>
-          <el-divider direction="vertical"></el-divider>
-          <span>  <a href="/fuwu/about/contact" rel="nofollow">联系我们</a></span>
-          <el-divider direction="vertical"></el-divider>
-          <span>   <a href="/nav">网站导航</a></span>
-
-        </div>
-      </template>
-      <div class="butten">
-        <p style="color:#b3b3b3;">Copyright © 2011 健身吧 www. jianshen .com . 版权所有 <a href="http://beian.miit.gov.cn/"
-                                                                                    rel="nofollow">
-          京ICP备2022036109号-1</a></p>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -374,7 +304,7 @@ export default {
   },
   methods: {
     loadCategoryList() {
-      let url = 'http://localhost:10001/articles/' + 48 + '/list';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=4&page=1&pageSize=5';
       console.log('url = ' + url);
 
       this.axios
@@ -385,7 +315,7 @@ export default {
         console.log('state=' + article.state);
         //获取后端传来的信息
         console.log('message=' + article.message);
-        this.eatData = article.data;
+        this.eatData = article.data.list;
 
       });
     },
@@ -434,7 +364,7 @@ export default {
 
     },
     GetArticles1(){
-      let url = 'http://localhost:10001/articles/' + 13;
+      let url = 'http://localhost:10001/articles/picture/' + 13;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -449,7 +379,7 @@ export default {
       });
     },
     GetArticles2(){
-      let url = 'http://localhost:10001/articles/' + 16;
+      let url = 'http://localhost:10001/articles/picture/' + 16;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -464,7 +394,7 @@ export default {
       });
     },
     GetArticles3(){
-      let url = 'http://localhost:10001/articles/' + 17;
+      let url = 'http://localhost:10001/articles/picture/' + 17;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -479,7 +409,7 @@ export default {
       });
     },
     GetArticles4(){
-      let url = 'http://localhost:10001/articles/' + 10;
+      let url = 'http://localhost:10001/articles/picture/' + 10;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -494,7 +424,7 @@ export default {
       });
     },
     GetArticles5(){
-      let url = 'http://localhost:10001/articles/' + 18;
+      let url = 'http://localhost:10001/articles/picture/' + 18;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -509,7 +439,7 @@ export default {
       });
     },
     GetArticles6(){
-      let url = 'http://localhost:10001/articles/' + 19;
+      let url = 'http://localhost:10001/articles/picture/' + 19;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})

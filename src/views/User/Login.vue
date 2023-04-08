@@ -1,52 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header style="  ">
-        <!--顶部 logo 搜索 登录注册-->
-        <div  style="width: 1200px;height: 70px;margin: 0 auto;align-content: center;position: relative; ">
-    <span>
-      <a href="/">
-          <img src="https://www.jianshen8.com/templets/jianshen8/images/logo.png" alt="">
-        </a>
-      <el-input v-model="input" class="el-input__icon "
-                suffix-icon="el-icon-search"
-                placeholder="请输入内容"
-                style="width:400px;
-                    position: absolute;
-                    top: 0;
-                    bottom: 20px;
-                    margin: 0px   15% 0;"></el-input>
-      <a href="/login"  style="float: right;" class="user">登录</a>
-      <a href="/reg"  style="float: right" class="user">注册</a>
-    </span>
-        </div>
-        <!--导航菜单-->
-        <el-menu
-            :default-active="activeIndex2"
-            class="el-menu-demo"
-            mode="horizontal"
-            @select="handleSelect"
-            background-color="#545c64"
-            text-color="#fff"
-            active-text-color="#ffd04b"
 
-        >
-          <el-menu-item index="index.html"  style="margin: 0 0 0 20% " ><a href="/" >首页</a></el-menu-item>
-          <el-submenu index="train.html">
-            <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">器械</a></template>
-            <el-menu-item index="2-1">器械1</el-menu-item>
-            <el-menu-item index="2-2">器械2</el-menu-item>
-          </el-submenu>
-
-          <el-submenu index="4">
-            <template slot="title"><a href="train.html" target="_blank" style="color: #fff8f8;font-size: 24px">饮食</a></template>
-            <el-menu-item index="4-1">饮食1</el-menu-item>
-            <el-menu-item index="4-2">饮食2</el-menu-item>
-          </el-submenu>
-          <el-menu-item index="5" ><a href="/list_page" style="color: #fff8f8;font-size: 24px">资讯</a></el-menu-item>
-          <el-menu-item index="6"><a href="/shooping" >商城</a></el-menu-item>
-        </el-menu>
-      </el-header>
       <!--登录-->
       <el-main >
         <!--卡片-->
