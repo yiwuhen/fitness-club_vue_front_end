@@ -46,7 +46,7 @@
               <br>
               <br>
               <i class="el-icon-view" style="margin-left: 15px"></i>
-              <span style="color: #f17656;">{{a.pageView}}100</span>人浏览
+              <span style="color: #f17656;">{{a.viewCount}}</span>人浏览
               <!--日期-->
               <span style="margin-left: 300px">{{a.date}}</span>
             </div>
