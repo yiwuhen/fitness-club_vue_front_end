@@ -36,7 +36,7 @@
             <!--最上边标题-->
             <h2><a :href="'/article?id='+a.id">{{a.title}}</a></h2>
             <!--内容简介-->
-            <p><a href="#">
+            <p><a :href="'/article?id='+a.id">
               {{a.description}}
             </a></p>
             <!--热度和日期-->
@@ -53,7 +53,7 @@
           </div>
           <!--右边图片-->
           <div class="hotImg">
-            <a href="#"><img :src="a.url" alt="健身使用哪些补剂和补剂的正确方法"></a>
+            <a :href="'/article?id='+a.id"><img :src="a.url" alt="健身使用哪些补剂和补剂的正确方法"></a>
           </div>
         </li>
       </ol>
@@ -77,7 +77,8 @@
 export default {
   data: function () {
     return {
-      pageSize:5,
+      pageSize:10,
+      page:1,
       total:1,
       activeIndex: '1',
       activeIndex2: '1',
@@ -127,7 +128,8 @@ export default {
     },
     //文章
     loadArticleList(){
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=2&page=1&pageSize=5';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=2&page='+this.page+'&pageSize='+ this.pageSize+'';
+
       console.log('url = ' + url);
 
       this.axios

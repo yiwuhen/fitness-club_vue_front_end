@@ -35,9 +35,9 @@
           <!--中间文字-->
           <div class="hotContent">
             <!--最上边标题-->
-            <h2><a href="#">{{a.title}}</a></h2>
+            <h2><a :href="'/article?id='+a.id">{{a.title}}</a></h2>
             <!--内容简介-->
-            <p><a href="#">
+            <p><a :href="'/article?id='+a.id">
               {{a.description}}
             </a></p>
             <!--热度和日期-->
@@ -54,7 +54,7 @@
           </div>
           <!--右边图片-->
           <div class="hotImg">
-            <a href="#"><img :src="a.url" alt="健身使用哪些补剂和补剂的正确方法"></a>
+            <a :href="'/article?id='+a.id"><img :src="a.url" alt="健身使用哪些补剂和补剂的正确方法"></a>
           </div>
         </li>
       </ol>
@@ -78,7 +78,8 @@
 export default {
   data: function () {
     return {
-      pageSize:5,
+      pageSize:10,
+      page:1,
       total:1,
       activeIndex: '1',
       activeIndex2: '1',
@@ -89,7 +90,8 @@ export default {
       tableData: [],
       articleArr:[],
       categoryChildrenArr:[],
-      categoryArr:[]
+      categoryArr:[],
+      categoryId:3,
     }
 
 
@@ -98,37 +100,40 @@ export default {
     //加载子分类文章
     LoadSubCategoryArticles(id){
       console.log(id)
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId='+id+'&page=1&pageSize=5';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId='+id+'&page='+this.page+'&pageSize='+ this.pageSize+'';
       console.log('url = ' + url);
-
+      this.categoryId = id;
+      console.log("测试："+this.categoryId)
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
           .get(url).then((response) => {
         let responseBody = response.data;
+        this.total = responseBody.data.totalCount;//总条数
+        this.pageSize = responseBody.data.pageSize;
         this.articleArr = responseBody.data.list;
         console.log()
       });
     },
     //分页
     pageChange(page) {
-      console.log(page) // 控制台输出当前页码
-      let url = 'http://localhost:10001/articles/listAll-by-Page?page='+page+'&pageSize='+this.pageSize;
+      console.log("当前页："+page) // 控制台输出当前页码
+      console.log("当前categoryId："+this.categoryId) // 控制台输出当前categoryId
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId='+this.categoryId+'&page='+page+'&pageSize='+ this.pageSize+'';
       console.log('url = ' + url);
-
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
           .get(url).then((response) => {
         let responseBody = response.data;
         console.log(responseBody)
-        this.total = responseBody.data.totalCount;
+        this.total = responseBody.data.totalCount;//总条数
         this.pageSize = responseBody.data.pageSize;
         this.articleArr =responseBody.data.list
       });
 
     },
-    //文章
+    //查全部文章
     loadArticleList(){
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=3&page=1&pageSize=5';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId='+this.categoryId+'&page='+this.page+'&pageSize='+ this.pageSize+'';
       console.log('url = ' + url);
 
       this.axios
@@ -136,6 +141,9 @@ export default {
           .get(url).then((response) => {
         let responseBody = response.data;
         this.articleArr = responseBody.data.list;
+
+        this.total = responseBody.data.totalCount;//总条数
+        this.pageSize = responseBody.data.pageSize;
         console.log()
       });
 

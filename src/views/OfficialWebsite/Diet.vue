@@ -46,7 +46,7 @@
               <br>
               <!--浏览量-->
               <i class="el-icon-view" style="margin-left: 15px"></i>
-              <span style="color: #f17656;">{{a.viewCount}}100</span>人浏览
+              <span style="color: #f17656;">{{a.viewCount}}</span>人浏览
               <!--日期-->
               <span style="margin-left: 300px">{{a.date}}</span>
             </div>
@@ -76,7 +76,8 @@
 export default {
   data: function () {
     return {
-      pageSize:5,
+      pageSize:10,
+      page:1,
       total:1,
       activeIndex: '1',
       activeIndex2: '1',
@@ -126,7 +127,7 @@ export default {
     },
     //文章
     loadArticleList(){
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=4&page=1&pageSize=5';
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=4&page='+this.page+'&pageSize='+ this.pageSize+'';
       console.log('url = ' + url);
 
       this.axios
@@ -134,6 +135,7 @@ export default {
           .get(url).then((response) => {
         let responseBody = response.data;
         this.articleArr = responseBody.data.list;
+        this.total = responseBody.data.totalCount;
         console.log()
       });
 

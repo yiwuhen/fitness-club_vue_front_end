@@ -41,7 +41,7 @@
                     <!--最上边标题-->
                     <h2><a :href="'/article?id='+a.id" >{{a.title}}</a></h2>
                     <!--内容简介-->
-                    <p><a href="#">
+                    <p><a :href="'/article?id='+a.id">
                       {{a.description}}
                     </a></p>
                     <!--热度和日期-->
@@ -59,7 +59,7 @@
                   </div>
                   <!--右边图片-->
                   <div class="hotImg">
-                    <a href="#"><img :src="a.url" alt="健身使用哪些补剂和补剂的正确方法"></a>
+                    <a :href="'/article?id='+a.id"><img :src="a.url" alt="健身使用哪些补剂和补剂的正确方法"></a>
                   </div>
                 </li>
               </ol>
@@ -92,7 +92,8 @@ export default {
       activeIndex2:'',
       wd:"",
       articleArr:[{}],
-      pageSize:5,
+      pageSize:10,
+      page:1,
       total:1,
       paginationObj:[],
       eatData: [],
@@ -135,7 +136,7 @@ export default {
       });
     },
     loadArticleList() {
-      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=5&page='+this.total+'&pageSize='+this.pageSize;
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=5&page='+this.page+'&pageSize='+ this.pageSize+'';
       console.log('url = ' + url);
 
       this.axios
@@ -146,11 +147,12 @@ export default {
         this.total = responseBody.data.totalCount;
         this.pageSize = responseBody.data.pageSize;
         this.articleArr =responseBody.data.list
+        this.total = responseBody.data.totalCount;
       });
     },
     pageChange(page) {
       console.log(page) // 控制台输出当前页码
-      let url = 'http://localhost:10001/articles/listAll-by-Page?page='+page+'&pageSize='+this.pageSize;
+      let url = 'http://localhost:10001/articles/list-by-categoryIdAndPage?categoryId=5&page='+this.page+'&pageSize='+ this.pageSize+'';
       console.log('url = ' + url);
 
       this.axios
@@ -161,6 +163,7 @@ export default {
         this.total = responseBody.data.totalCount;
         this.pageSize = responseBody.data.pageSize;
         this.articleArr =responseBody.data.list
+        this.total = responseBody.data.totalCount;
       });
 
     },
