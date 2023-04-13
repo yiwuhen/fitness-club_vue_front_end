@@ -78,7 +78,7 @@
 export default {
   data: function () {
     return {
-      pageSize:10,
+      pageSize:5,
       page:1,
       total:1,
       activeIndex: '1',

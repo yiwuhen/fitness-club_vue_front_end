@@ -8,8 +8,12 @@
           <!-- 标题 -->
           <p style="font-size: 40px;font-weight: bold;margin-bottom: 1px;">{{ tableData.title }} </p>
           <!-- 时间 -->
+          <div style="text-align: left;margin-top: 10px;margin-bottom: -20px;margin-left: 10px">
+            <b style="font-size: 14px;text-align:right;color: #404040">浏览量:&nbsp; {{tableData.viewCount}}</b>
+          </div>
           <div style="text-align: right">
-            <b style="font-size: 12px;text-align:right;color: #909399">{{tableData.gmtModified}}</b>
+
+            <b style="font-size: 12px;text-align:right;color: #636363">发布时间:&nbsp; {{tableData.gmtModified}}</b>
           </div>
           <hr>
           <!-- 文章详情 -->
@@ -21,7 +25,6 @@
       <el-footer style="height: auto;text-align: center">
         <a style="margin-left: 10px;text-decoration: none;color: #1a1a1a" href="javascript:void(0);"@click="setDisplay">
           <span style="text-align: center;font-size: 20px;font-weight: bold" ></span></a>
-
       </el-footer>
       <!--底部-->
 
@@ -48,18 +51,9 @@ export default {
     setHide:function () {
       this.show=false;
     },
-    handleChange: function () {
-
-    },
     /*获取单选框选中的值*/
     getValue(index) {
       console.log(index);
-    },
-    inputRadio: function () {
-      console.log(this.radio.label)
-    },
-    handleSelect: function () {
-
     },
     loadArticleList() {
       //接受上级页面传来的id参数
@@ -68,7 +62,7 @@ export default {
       console.log(this.$route)
       console.log("文章id:"+id)
 
-      let url = 'http://localhost:10001/articles/'+ id ;
+      let url = 'http://localhost:10001/articles/front/'+ id ;
       console.log('url = ' + url);
 
       this.axios

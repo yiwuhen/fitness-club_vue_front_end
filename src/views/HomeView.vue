@@ -13,13 +13,28 @@
             <el-button slot="append" icon="el-icon-search" style="background: #d52f04;border-radius: 0px"></el-button>
           </el-input>
         </div>
-        <a href="/login" style="float: right;position: relative;top: -1px;right: -250px" class="user">登录</a>
-        <a href="/reg" style="float: right;position: relative;top: -1px;right: -230px" class="user">注册</a>
-        <a href="/usercontrol" style="float: right;position: relative;top: -1px;right: -530px" class="user">用户中心</a>
+        <a href="/login" style="float: right;position: relative;top: -1px;right: -250px;
+ font-size: 24px;
+  color: #333334;
+  display: block;
+  margin-top: 17px;
+  margin-right: 15px;" class="user">登录</a>
+        <a href="/reg" style="float: right;position: relative;top: -1px;right: -230px;
+ font-size: 24px;
+  color: #333334;
+  display: block;
+  margin-top: 17px;
+  margin-right: 15px;" >注册</a>
+        <a href="/usercontrol" style="float: right;position: relative;top: -1px;right: -530px; font-size: 24px;
+  color: #333334;
+  display: block;
+  margin-top: 17px;
+  margin-right: 15px;" >用户中心</a>
       </span>
     </div>
     <!--导航菜单-->
     <el-menu
+        router
         :default-active="activeIndex2"
         class="el-menu-demo"
         mode="horizontal"
@@ -29,12 +44,12 @@
         active-text-color="#ffd04b"
 
     >
-      <el-menu-item index="index" style="margin: 0 0 0 20% "><a href="/">首页</a></el-menu-item>
-      <el-menu-item index="3"><a href="/officialWebsite/train" style="color: #fff8f8;font-size: 24px">器械</a></el-menu-item>
-      <el-menu-item index="3"><a href="/officialWebsite/muscle" style="color: #fff8f8;font-size: 24px">肌肉</a></el-menu-item>
-      <el-menu-item index="4"><a href="/officialWebsite/diet" style="color: #fff8f8;font-size: 24px">饮食</a></el-menu-item>
-      <el-menu-item index="5"><a href="/list_page" style="color: #fff8f8;font-size: 24px">资讯</a></el-menu-item>
-      <el-menu-item index="6"><a href="/officialWebsite/shooping">商城</a></el-menu-item>
+      <el-menu-item index="/officialWebsite/index" style="margin: 0 0 0 20% ; color: #fff8f8;font-size: 24px" @click="refresh">首页</el-menu-item>
+      <el-menu-item index="/officialWebsite/train" style="color: #fff8f8;font-size: 24px">器械</el-menu-item>
+      <el-menu-item index="/officialWebsite/muscle" style="color: #fff8f8;font-size: 24px">肌肉</el-menu-item>
+      <el-menu-item index="/officialWebsite/diet" style="color: #fff8f8;font-size: 24px">饮食</el-menu-item>
+      <el-menu-item index="/list_page" style="color: #fff8f8;font-size: 24px">资讯</el-menu-item>
+      <el-menu-item index="/officialWebsite/shooping" style="color: #fff8f8;font-size: 24px">商城</el-menu-item>
     </el-menu>
     <!--中间部分由其他页面展示-->
     <div>
@@ -90,41 +105,9 @@ export default {
 
   },
   methods: {
-    loadCategoryList() {
-      let url = 'http://localhost:10001/articles/' + 48 + '/list';
-      console.log('url = ' + url);
-
-      this.axios
-          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
-          .get(url).then((response) => {
-        let responseBody = response.data;
-        //获取状态
-        console.log('state=' + responseBody.state);
-        //获取后端传来的信息
-        console.log('message=' + responseBody.message);
-        this.eatData = responseBody.data;
-
-      });
-    },
-    loadCategoryListXl() {
-      let url = 'http://localhost:10001/articles/' + 29 + '/list';
-      console.log('url = ' + url);
-      this.axios
-          .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
-          .get(url).then((response) => {
-        let responseBody = response.data;
-        //获取状态
-        console.log('state=' + responseBody.state);
-        //获取后端传来的信息
-        console.log('message=' + responseBody.message);
-        this.tableData = responseBody.data;
-
-
-        console.log("时间显示测试：");
-        console.log(this.tableData[1]);
-        console.log(this.eatData);
-
-      });
+    // 强制点击首页刷新
+    refresh(){
+      this.$router.go(0)
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
@@ -139,62 +122,10 @@ export default {
     },
 
   },
-  mounted() {
-    //启动时加载饮食文章列表
-    this.loadCategoryList();
-    //启动时加载器械文章列表
-    this.loadCategoryListXl();
 
-  }
 }
 </script>
 <style type="text/css">
-a, a:visited, a:link, a:hover{
-  color:white;
-}
-
-
-/* 大盒子 */
-.item-grid {
-  max-width: 1000px;
-  margin: 100px auto;
-  position: relative;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-/* 小盒子 */
-.item {
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 335px;
-  background-color: #000;
-  overflow: hidden;
-}
-
-.item::after {
-  content: " ";
-  display: block;
-  background-color: inherit;
-  opacity: 0.5;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* 没悬浮的时候，隐藏在图片下方 */
-  transform: translateY(100%);
-  transition: transform 0.5s;
-}
-
-/* 悬浮后覆盖在图片上面*/
-.item:hover:after {
-  transform: translateY(0%);
-
-}
-
-
 .item:hover .item-image {
   transform: scale(1.1);
 }
@@ -286,14 +217,7 @@ a {
   font-size: 24px;
 }
 
-.user {
-  text-decoration: none; /*无下划线*/
-  font-size: 24px;
-  color: #333334;
-  display: block;
-  margin-top: 17px;
-  margin-right: 15px;
-}
+
 
 .el-carousel__item h3 {
   color: #475669;
@@ -346,21 +270,6 @@ a {
   color: white;
 }
 
-.el-input-group__append {
-  margin: 0px;
-  border-radius: 0px;
-  border-color: #d52f04;
-  padding-bottom: 1px;
-
-}
-
-/*搜索框属性*/
-.el-input__inner {
-  border-radius: 0px;
-  color: #d52f04;
-  border: 1px;
-
-}
 
 </style>
 <!-- 引入样式 -->

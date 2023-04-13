@@ -12,7 +12,7 @@
       </template>
     </div>
     <!-- 第一部分内容-->
-    <div style=" background-color: #eaeaea;height: 730px;margin: 0 auto">
+    <div style=" background-color: #eaeaea;height: 730px;margin: 0 auto" >
       <!--嵌套剧中div-->
       <div style="width: 1200px;height: 730px; margin: 0 auto;padding-top: 10px">
         <!--标题分类-->
@@ -37,7 +37,7 @@
                       </div>
                       <div class="item-text">
                         <div class="item-text-wrapper">
-                          <a :href="'/article?id='+Articles1.id">
+                          <a :href="'/article?id='+Articles1.id" class="PartOne">
                             <h2 class="item-text-title">{{ Articles1.title }}</h2>
                           </a>
 
@@ -61,7 +61,7 @@
                       <div class="item-text">
                         <div class="item-text-wrapper">
                           <a :href="'/article?id='+Articles2.id">
-                            <h2 class="item-text-title">{{ Articles2.title}}</h2>
+                            <h2 class="item-text-title2">{{ Articles2.title}}</h2>
                           </a>
 
                           <p class="item-text-dek">{{Articles2.description}}</p>
@@ -81,8 +81,8 @@
                       <div class="item-text">
                         <div class="item-text-wrapper">
                           <a :href="'/article?id='+Articles3.id">
-                            <h2 class="item-text-title">{{ Articles3.title }}</h2>
-                            <p class="item-text-dek">我是内容</p>
+                            <h2 class="item-text-title2">{{ Articles3.title }}</h2>
+                            <p class="item-text-dek">{{ Articles3.description }}</p>
                           </a>
 
                         </div>
@@ -260,7 +260,7 @@
                       <div class="item-text">
                         <div class="item-text-wrapper">
                           <a :href="'/article?id='+Articles5.id">
-                            <h2 class="item-text-title">{{ Articles5.title }}</h2>
+                            <h2 class="item-text-title2">{{ Articles5.title }}</h2>
                             <p class="item-text-dek">{{ Articles5.description }}</p>
                           </a>
                         </div>
@@ -281,7 +281,7 @@
                         <div class="item-text-wrapper">
                           <a :href="'/article?id='+Articles6.id">
 
-                            <h2 class="item-text-title">{{ Articles6.title }}</h2>
+                            <h2 class="item-text-title2">{{ Articles6.title }}</h2>
                             <p class="item-text-dek">{{ Articles6.description }}</p>
                           </a>
                         </div>
@@ -421,6 +421,7 @@ export default {
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
           .get(url).then((response) => {
         let responseBody = response.data;
+
         //获取状态
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
@@ -430,18 +431,20 @@ export default {
       });
     },
     GetArticles4(){
-      let url = 'http://localhost:10001/articles/picture/' + 10;
+      let url = 'http://localhost:10001/articles/picture/' + 24;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
           .get(url).then((response) => {
         let responseBody = response.data;
+        console.log("打算大萨达发大发大"+ response.data.id)
+        console.log("打算大萨达发大发大"+ response.data)
         //获取状态
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
         console.log('message=' + responseBody.message);
         this.Articles4 = responseBody.data;
-
+        console.log("ce" +responseBody.data)
       });
     },
     GetArticles5(){
@@ -454,7 +457,8 @@ export default {
         //获取状态
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
-        console.log('message=' + responseBody.message);
+        console.log('message=' + responseBody.data);
+        console.log('id 为=' + responseBody.data.id);
         this.Articles5 = responseBody.data;
 
       });
@@ -469,13 +473,13 @@ export default {
         //获取状态
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
-        console.log('message=' + responseBody.message);
+        console.log('message=' + responseBody.data);
         this.Articles6 = responseBody.data;
 
       });
     },
     GetArticles7(){
-      let url = 'http://localhost:10001/articles/picture/' + 33;
+      let url = 'http://localhost:10001/articles/picture/'+33;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -484,7 +488,7 @@ export default {
         //获取状态
         console.log('state=' + responseBody.state);
         //获取后端传来的信息
-        console.log('message=' + responseBody.message);
+        console.log('message=' + responseBody.data);
         this.Articles7 = responseBody.data;
 
       });
@@ -524,7 +528,9 @@ export default {
 }
 </script>
 <style type="text/css">
-
+#PartOne>a, a:visited, a:link, a:hover{
+  color:white;
+}
 /* 大盒子 */
 .item-grid {
   max-width: 1000px;
@@ -628,6 +634,11 @@ export default {
   padding: 0 15px;
   margin: 5px 0 0 0;
 }
+.item-text-title2 {
+  font-size: 24px;
+  padding: 0 15px;
+  margin: 5px 0 0 0;
+}
 
 .item-text-dek {
   font-size: 16px;
@@ -716,23 +727,6 @@ a {
 .el-icon-search:before {
   color: white;
 }
-
-.el-input-group__append {
-  margin: 0px;
-  border-radius: 0px;
-  border-color: #d52f04;
-  padding-bottom: 1px;
-
-}
-
-/*搜索框属性*/
-.el-input__inner {
-  border-radius: 0px;
-  color: #d52f04;
-  border: 1px;
-
-}
-
 </style>
 <!-- 引入样式 -->
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
