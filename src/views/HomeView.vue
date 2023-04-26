@@ -107,6 +107,7 @@ export default {
   methods: {
     // 强制点击首页刷新
     refresh(){
+      this.$router.push('/officialWebsite/index')
       this.$router.go(0)
     },
     handleSelect(key, keyPath) {

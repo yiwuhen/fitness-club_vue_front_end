@@ -78,7 +78,7 @@
           <el-row  :gutter="7" style="padding: 20px 20px 20px 20px;margin: 0 auto">
             <el-col :span="4" style="padding-left: 0;padding-right: 0;margin:0px 10px 10px 10px; width:205px ;">
               <div class="grid-content bg-purple">
-                <a href="" class="TradeName">
+                <a href="/Shopping/detail" class="TradeName">
                   <img src="	http://106.55.25.190:8011/static/upload/images/goods/2019/01/14/1547455566118614.jpg"  style="width: 100%" alt="">
                   <div style="height: 32px;">
                     <p style="padding-left: 10px"> 夏季复古ins风格网红SP同款 </p>
@@ -96,7 +96,7 @@
             </el-col>
             <el-col :span="4" style="padding-left: 0;padding-right: 0; margin:0px 10px 10px 10px; width:205px ;">
               <div class="grid-content ">
-                <a href="" class="TradeName">
+                <a href="/Shopping/detail" class="TradeName">
                   <img src="http://106.55.25.190:8011/static/upload/images/goods/2019/01/14/1547451909951171.jpg"  style="width: 100%" alt="">
                   <div style="height: 32px;">
                     <p style="padding-left: 10px"> Samsung/三星 SM-G8508S GALAXY 新品 闪耀白 </p>
@@ -113,7 +113,7 @@
             </el-col>
             <el-col :span="4" style="padding-left: 0;padding-right: 0; margin:0px 10px 10px 10px; width:205px ;">
               <div class="grid-content bg-purple">
-                <a href="" class="TradeName">
+                <a href="/Shopping/detail" class="TradeName">
                   <img src="http://106.55.25.190:8011/static/upload/images/goods/2019/01/15/1547540603500383.jpg"  style="width: 100%" alt="">
                   <div style="height: 32px;">
                     <p style="padding-left: 10px"> 纽芝兰包包女士2018新款潮百搭韩版时尚单肩斜挎包少女小挎包链条 </p>
@@ -130,7 +130,7 @@
             </el-col>
             <el-col :span="4" style="padding-left: 0;padding-right: 0; margin:0px 10px 10px 10px; width:205px ;">
               <div class="grid-content ">
-                <a href="" class="TradeName">
+                <a href="/Shopping/detail" class="TradeName">
                   <img src="	http://106.55.25.190:8011/static/upload/images/goods/2019/01/14/1547455566118614.jpg"  style="width: 100%" alt="">
                   <div style="height: 32px;">
                     <p style="padding-left: 10px"> 夏季复古ins风格网红SP同款 </p>
@@ -147,7 +147,7 @@
             </el-col>
             <el-col :span="4" style="padding-left: 0;padding-right: 0; margin:0px 10px 10px 10px; width:205px ;">
               <div class="grid-content bg-purple">
-                <a href="" class="TradeName">
+                <a href="/Shopping/detail" class="TradeName">
                   <img src="	http://106.55.25.190:8011/static/upload/images/goods/2019/01/14/1547455566118614.jpg"  style="width: 100%" alt="">
                   <div style="height: 32px;">
                     <p style="padding-left: 10px"> 夏季复古ins风格网红SP同款 </p>
@@ -164,7 +164,7 @@
             </el-col>
             <el-col :span="4" style="padding-left: 0;padding-right: 0; margin:10px 10px 10px 10px; width:205px ;">
               <div class="grid-content bg-purple">
-                <a href="" class="TradeName">
+                <a href="/Shopping/detail" class="TradeName">
                   <img src="	http://106.55.25.190:8011/static/upload/images/goods/2019/01/14/1547455566118614.jpg"  style="width: 100%" alt="">
                   <div style="height: 32px;">
                     <p style="padding-left: 10px"> 夏季复古ins风格网红SP同款 </p>

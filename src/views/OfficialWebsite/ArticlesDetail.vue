@@ -55,13 +55,12 @@ export default {
     getValue(index) {
       console.log(index);
     },
+    //接收传递
     loadArticleList() {
       //接受上级页面传来的id参数
       let id = this.$route.query.id;
-
       console.log(this.$route)
       console.log("文章id:"+id)
-
       let url = 'http://localhost:10001/articles/front/'+ id ;
       console.log('url = ' + url);
 

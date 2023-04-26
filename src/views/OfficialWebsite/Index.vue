@@ -364,6 +364,7 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
+    //参数传递
     viewDetails(row) {
       // 获取点击表格的信息
       console.log('表格被点击了');
@@ -378,7 +379,7 @@ export default {
             //携带需要传递的参数
             query:{
               id:id,
-              title:title
+              title:title,
             }
 
           })
