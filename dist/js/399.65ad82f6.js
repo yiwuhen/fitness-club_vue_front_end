@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfitness_thousand_strategies"]=self["webpackChunkfitness_thousand_strategies"]||[]).push([[399],{5399:function(s,t,n){n.r(t),n.d(t,{default:function(){return l}});var e=function(){var s=this;s._self._c;return s._m(0)},u=[function(){var s=this,t=s._self._c;return t("div",{staticClass:"about"},[t("h1",[s._v("This is an about page")])])}],a=n(1001),i={},r=(0,a.Z)(i,e,u,!1,null,null,null),l=r.exports}}]);
+//# sourceMappingURL=399.65ad82f6.js.map
