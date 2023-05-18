@@ -352,11 +352,8 @@ export default {
         //获取后端传来的信息
         console.log('message=' + responseBody.message);
         this.tableData = responseBody.data.list;
-
-
         console.log("时间显示测试：");
        /* console.log(this.tableData[1]);*/
-
         console.log(this.eatData);
 
       });
@@ -386,7 +383,7 @@ export default {
 
     },
     GetArticles1(){
-      let url = 'http://localhost:10001/articles/picture/' + 13;
+      let url = 'http://localhost:10001/articles/picture/' + 35;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -401,7 +398,7 @@ export default {
       });
     },
     GetArticles2(){
-      let url = 'http://localhost:10001/articles/picture/' + 16;
+      let url = 'http://localhost:10001/articles/picture/' + 36;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -416,7 +413,7 @@ export default {
       });
     },
     GetArticles3(){
-      let url = 'http://localhost:10001/articles/picture/' + 17;
+      let url = 'http://localhost:10001/articles/picture/' + 37;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -432,7 +429,7 @@ export default {
       });
     },
     GetArticles4(){
-      let url = 'http://localhost:10001/articles/picture/' + 24;
+      let url = 'http://localhost:10001/articles/picture/' + 41;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -449,7 +446,7 @@ export default {
       });
     },
     GetArticles5(){
-      let url = 'http://localhost:10001/articles/picture/' + 18;
+      let url = 'http://localhost:10001/articles/picture/' + 40;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -465,7 +462,7 @@ export default {
       });
     },
     GetArticles6(){
-      let url = 'http://localhost:10001/articles/picture/' + 19;
+      let url = 'http://localhost:10001/articles/picture/' + 42;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -480,7 +477,7 @@ export default {
       });
     },
     GetArticles7(){
-      let url = 'http://localhost:10001/articles/picture/'+33;
+      let url = 'http://localhost:10001/articles/picture/'+38;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
@@ -495,7 +492,7 @@ export default {
       });
     },
     GetArticles8(){
-      let url = 'http://localhost:10001/articles/picture/' + 28;
+      let url = 'http://localhost:10001/articles/picture/' + 43;
       console.log('url = ' + url);
       this.axios
           .create({'headers': {'Authorization': localStorage.getItem('jwt')}})
